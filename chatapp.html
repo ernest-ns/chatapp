@@ -1,0 +1,31 @@
+<head>
+  <title>chatapp</title>
+</head>
+
+<body>
+	<div id="messages-list">
+		{{> list}}
+	</div>
+	<div id="new-message">
+		{{> newMessageTemplate}}
+	</div>
+</body>
+
+<template name="list">
+	<div class="list">
+		{{#each messages}}
+		    {{> message}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="message">
+	<div class="message-text-wrapper">
+		<span class="message-text">{{message}}</span>
+	</div>
+</template>
+
+<template name="newMessageTemplate">
+	<input class="message-text" type="text"/>
+	<input type="button" value="Go!!" class="go-button"/>
+</template>
