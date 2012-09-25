@@ -3,13 +3,43 @@
 </head>
 
 <body>
-	<div id="messages-list">
-		{{> list}}
+	<div class="step1">
+		{{> userLoginTemplate}}
 	</div>
-	<div id="new-message">
-		{{> newMessageTemplate}}
+	<div class="step2 hidden">
+		{{> chatRoomsListTemplate}}
+	</div>
+	<div class="step3 hidden">
+		<div id="messages-list">
+			{{> list}}
+		</div>
+		<div id="new-message">
+			{{> newMessageTemplate}}
+		</div>
 	</div>
 </body>
+
+<template name="userLoginTemplate">	
+	<form id="user-login">
+		<label class="username">Enter your user name</label>
+		<input class="username"/>		
+		<input type="button" value="Login!!" class="username-button"/>
+	</form>			
+</template>
+
+<template name="chatRoomsListTemplate">
+	<div class="chat-rooms-container">
+		{{#each chatRooms}}
+		    {{> chatRoom}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="chatRoomTemplate">
+	<div class="chat-room-name-wrapper">
+		<span class="chat-room-name">{{chatRoom}}</span>
+	</div>
+</template>
 
 <template name="list">
 	<div class="list">
