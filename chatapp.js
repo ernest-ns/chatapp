@@ -4,23 +4,16 @@ if (Meteor.is_client) {
   Template.list.messages = function(){
     return Messages.find({});
   };
-  Template.newMessageTemplate.events = {
-    'click input.go-button' :  function(){
+  Template.newMessageTemplate.events = {   
+    'submit form.add-new-message' : function(event){
+      event.preventDefault();
       var messageTextInputField = $('input.message-text');
       var messageText = messageTextInputField.val();
       console.log(messageText);
       Messages.insert({message : messageText});
       messageTextInputField.val('');
     }
-  };
-
-  Template.hello.events = {
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  };
+  };  
 }
 
 if (Meteor.is_server) {
