@@ -1,1 +1,13 @@
-/* CSS declarations go here */
+#messages-list {
+    line-height: 1.3em;
+}
+.add-new-message {
+    margin-top: 20px;
+}
+.add-new-message legend {
+    font-size: 0.8em; font-weight: bold;
+}
+.message-text-wrapper {
+    padding-top: 5px;
+    line-height: 1.2em;
+}
